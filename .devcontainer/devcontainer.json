@@ -1,0 +1,9 @@
+{
+    "name": "cSys",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "csys",
+    "workspaceFolder": "/usr/src/redmine",
+    "shutdownAction": "stopCompose",
+    "remoteUser": "redmine",
+    "updateRemoteUserUID": false    
+  }

@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  csys:
+    image: redmine:passenger
+    restart: always
+    ports:
+      - ${CSYS_PORT}:3000
+    environment:
+      REDMINE_DB_MYSQL: db
+      REDMINE_DB_DATABASE: ${COSMOSYS_DB_NAME}    
+      REDMINE_DB_PASSWORD: ${COSMOSYS_DB_PASSWORD}
+      REDMINE_SECRET_KEY_BASE: ${COSMOSYS_DB_SECRETKEY}
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${COSMOSYS_DB_PASSWORD}
+      MYSQL_DATABASE: ${COSMOSYS_DB_NAME}
